@@ -39,7 +39,6 @@ grid-images:
       grid-image-description: we need to descrbe the image for seo
 
 ---
-<h1 class="text-4xl font-bold text-slate-900">Welcome to your homepage!</h1>
 
 <!---Banner Section (want bg image, text and overlay to be changeable)-->
 
@@ -69,7 +68,7 @@ grid-images:
     <div class="leading-8 grid gap-8 md:grid-cols-3">
       {% for ebooks in site.ebooks limit:3 %}
       <a class="border" href="{{ebooks.url}}">
-        <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{ebooks.featured_image}})"> </div>
+        <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{ebooks.featured-image}})"> </div>
         <h3 class="text-xl font-semibold pl-2"> {{ebooks.title}} </h3>
         <p class="pl-2">Find Out More</p>
       </a>
@@ -79,13 +78,13 @@ grid-images:
 
 <!---Testimonial Section (F)-->
 
-<section>
+<section class="grid gap-2 md:grid-cols-4 bg-orange-200">
     {% for item in site.data.testimonials %}
-    <div class="grid md:grid-cols-4">
-        <span>{{item.product}}</span>
-        <span>{{item.testimonial}}</span>
-        <span>{{item.name}}</span>
-        <span>{{item.title}}</span>
+    <div class="p-[5%] text-center">
+        <p class="p-10">{{item.product}}</p>
+        <p>{{item.testimonial}}</p>
+        <p>{{item.name}}</p>
+        <p>{{item.title}}</p>
         <img class="object-center object-cover h-[20vh]" src="{{item.image}}">
     </div>
     {% endfor %}
