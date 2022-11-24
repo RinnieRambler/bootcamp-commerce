@@ -6,6 +6,10 @@
     @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
 }
 
+body,
+* {
+    border: 2px solid;
+}
 section,
 header,
 footer {

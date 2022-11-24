@@ -1,6 +1,30 @@
 ---
 layout: default
 title: Homepage
+text: This is a bunch of text for text ands image section
+text-and-image: 
+    - text-and-image_url: https://picsum.photos/id/1025/600/400
+      text: This is a bunch of text for text ands image section
+    - text-and-image_url: https://picsum.photos/600/400
+      text: This is the second a bunch of text for text ands image section
+    - text-and-image_url: https://picsum.photos/900/400
+      text: This is the third bunch of text for text ands image section
+sneak-peek:
+    - peek-image_url: https://picsum.photos/id/684/600/400
+      heading: Inside Product One
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - peek-image_url: https://picsum.photos/id/231/600/400
+      heading: Inside Product Two
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    
+    - peek-image_url: https://picsum.photos/id/235/600/400
+      heading: Inside Product Three
+      text: Here is a cheeky little preview of this really fricking amazing product Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - peek-image_url: https://picsum.photos/id/377/600/400
+      heading: Inside Product Four
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - peek-image_url: https://picsum.photos/id/393/600/400
+      heading: Inside Product Five
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ---
 <h1 class="text-4xl font-bold text-slate-900">Welcome to your homepage!</h1>
 
@@ -11,12 +35,35 @@ title: Homepage
 </section>
 
 <!---Gallery Section (F)-->
+<!-- I need to coem back to this and tell it where to find info-->
 
-<section></section>
+<section class="grid md:grid-cols-3">
+    {% for item in block.gallery %}
+    <div>
+        <img class="p-5" src="{{item.image_url}}">
+    </div>
+    {% endfor %}
+</section>
 
 <!---Featured Products Section-->
+<!-- I need to come back to this and tell it where to find info-->
 
-<section></section>
+{% assign featuredProducts = site.ebooks | where_exp: "item", "item.featured == true" %}
+<section class="p-10 mb-20 tracking-wide ">
+    <div class="p-5"> 
+      <h3 class="pb-5 text-2xl text-center">Featured Products</h3>
+    </div>
+    <div class="leading-8 grid gap-8 md:grid-cols-3">
+      {% for ebooks in site.ebooks limit:3 %}
+      <a class="border" href="{{ebooks.url}}">
+        <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{ebooks.featured_image}})"> </div>
+        <span class="category uppercase text-sm pl-2">{{ebooks.category}}</span>
+        <h3 class="text-xl font-semibold pl-2"> {{ebooks.title}} </h3>
+        <p class="pl-2">Find Out More</p>
+      </a>
+      {% endfor %}  
+    </div>
+  </section>
 
 <!---Testimonial Section (F)-->
 
@@ -24,7 +71,17 @@ title: Homepage
 
 <!---Sneak Peek Section-->
 
-<section></section>
+{% for section in page.sneak-peek %}
+<section class="grid grid-cols-2">
+    <div>
+        <img src="{{section.peek-image_url}}" alt="">
+    </div>
+    <div>
+        <h2>{{section.heading}}</h2>
+        <p>{{section.text}}</p>
+    </div>
+</section>
+{% end for% }
 
 <!---Introduction Section-->
 
@@ -55,7 +112,17 @@ title: Homepage
 
 <!---Related Products Section (F)-->
 
-<section></section>
+<section class="grid gap-2 grid-cols-5">
+    {% for item in site.ebooks limit:5 %}
+    <div class="{% if forloop.index == 2 %}col-span-3 row-span-2{% endif %}">
+        <h2> {{item.title}}</h2>
+        <img src="{{item.featured_image}}">
+        <p>{{item.description}}</p>
+        <a href="{{item.url}}">Click Me</a>
+    </div>
+    {% endfor %}
+</section>
+
 
 <!---Text Section-->
 
@@ -67,7 +134,16 @@ title: Homepage
 
 <!---Text and Image Section (F)-->
 
-<section></section>
+{% for section in page.text-and-image %}
+<section class="grid grid-cols-2">
+    <div class="{% cycle 'col-start-2', ''%}">
+        <img class="mx-auto" src="{{section.text-and-image_url}}">
+    </div>
+    <div class="{% cycle 'col-start-1 row-start-1', ''%} ">
+        <p>{{section.text}}</p>
+    </div>
+</section>
+{% endfor %}
 
 <!---Reviews Section-->
 
