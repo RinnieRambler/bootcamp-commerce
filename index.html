@@ -11,20 +11,33 @@ text-and-image:
       text: This is the third bunch of text for text ands image section
 sneak-peek:
     - peek-image_url: https://picsum.photos/id/684/600/400
+      peek-image-description: we need to descrbe the image for seo
       heading: Inside Product One
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     - peek-image_url: https://picsum.photos/id/231/600/400
+      peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Two
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    
     - peek-image_url: https://picsum.photos/id/235/600/400
+      peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Three
       text: Here is a cheeky little preview of this really fricking amazing product Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     - peek-image_url: https://picsum.photos/id/377/600/400
+      peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Four
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     - peek-image_url: https://picsum.photos/id/393/600/400
+      peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Five
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+grid-images:
+    - grid-image: https://picsum.photos/id/393/600/400
+      grid-image-description: we need to descrbe the image for seo
+    - grid-image: https://picsum.photos/id/393/600/400
+      grid-image-description: we need to descrbe the image for seo
+    - grid-image: https://picsum.photos/id/393/600/400
+      grid-image-description: we need to descrbe the image for seo
+
 ---
 <h1 class="text-4xl font-bold text-slate-900">Welcome to your homepage!</h1>
 
@@ -35,12 +48,12 @@ sneak-peek:
 </section>
 
 <!---Gallery Section (F)-->
-<!-- I need to coem back to this and tell it where to find info-->
+<!-- I need to come back to this and tell it where to find info-->
 
-<section class="grid md:grid-cols-3">
-    {% for item in block.gallery %}
+<section class="grid md:grid-cols-5 limit:5">
+    {% for item in site.ebooks %}
     <div>
-        <img class="p-5" src="{{item.image_url}}">
+        <img class="p-5" src="{{item.featured-image}}">
     </div>
     {% endfor %}
 </section>
@@ -57,7 +70,6 @@ sneak-peek:
       {% for ebooks in site.ebooks limit:3 %}
       <a class="border" href="{{ebooks.url}}">
         <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{ebooks.featured_image}})"> </div>
-        <span class="category uppercase text-sm pl-2">{{ebooks.category}}</span>
         <h3 class="text-xl font-semibold pl-2"> {{ebooks.title}} </h3>
         <p class="pl-2">Find Out More</p>
       </a>
@@ -67,14 +79,24 @@ sneak-peek:
 
 <!---Testimonial Section (F)-->
 
-<section></section>
+<section>
+    {% for item in site.data.testimonials %}
+    <div class="grid md:grid-cols-4">
+        <span>{{item.product}}</span>
+        <span>{{item.testimonial}}</span>
+        <span>{{item.name}}</span>
+        <span>{{item.title}}</span>
+        <img class="object-center object-cover h-[20vh]" src="{{item.image}}">
+    </div>
+    {% endfor %}
+</section>
 
 <!---Sneak Peek Section-->
 
 {% for section in page.sneak-peek %}
 <section class="grid grid-cols-2">
     <div>
-        <img src="{{section.peek-image_url}}" alt="">
+        <img src="{{section.peek-image_url}}" alt="we need to descrbe the image for seo">
     </div>
     <div>
         <h2>{{section.heading}}</h2>
@@ -90,13 +112,25 @@ sneak-peek:
     <p> This is text</p>
 </section>
 
-<!---FAQ Section (F)-->
+<!---Images Section (F) -->
 <section>
-    
+   {% for item in page.grid-images %}
+    <div>
+      <img src="{{item.grid-image}}" alt="we need to descrbe the image for seo">
+    </div>
+    {% endfor %}
 </section>
 
-<!---Images Section (F) -->
-<section></section>
+<!---FAQ Section (F)-->
+<section>
+    {% for item in site.data.faqs %}
+    <div>
+        <span>{{item.question}}</span>
+        <span>{{item.answer}}</span>
+    </div>
+    {% endfor %}
+</section>
+
 
 <!---Pricing Section-->
 
@@ -113,7 +147,7 @@ sneak-peek:
     {% for item in site.ebooks limit:5 %}
     <div class="{% if forloop.index == 2 %}col-span-3 row-span-2{% endif %}">
         <h2> {{item.title}}</h2>
-        <img src="{{item.featured_image}}">
+        <img src="{{item.featured-image}}">
         <p>{{item.description}}</p>
         <a href="{{item.url}}">Click Me</a>
     </div>
@@ -153,5 +187,6 @@ sneak-peek:
 </section>
 
 <!---Before / After Section (F)-->
+<!---skipping for now-->
 
 <section></section>
