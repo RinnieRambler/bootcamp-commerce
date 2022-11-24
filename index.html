@@ -78,13 +78,12 @@ grid-images:
 
 <!---Testimonial Section (F)-->
 
-<section class="grid gap-2 md:grid-cols-4 bg-orange-200">
+<section class="grid gap-2 md:grid-cols-4">
     {% for item in site.data.testimonials %}
-    <div class="p-[5%] text-center">
+    <div class="p-[5%] text-center bg-orange-100">
         <p class="p-10">{{item.product}}</p>
-        <p>{{item.testimonial}}</p>
-        <p>{{item.name}}</p>
-        <p>{{item.title}}</p>
+        <p class="p-10">{{item.testimonial}}</p>
+        <p>{{item.name}}{{item.title}}</p>
         <img class="object-center object-cover h-[20vh]" src="{{item.image}}">
     </div>
     {% endfor %}
