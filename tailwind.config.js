@@ -1,3 +1,5 @@
+
+
 module.exports = {
   content: [
     './_includes/**/*.{html,md}',
@@ -6,7 +8,14 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
+    fontFamily: {
+      fancy:[]
+      boring:
+    }
+    colors: {// <!----- add custom colours here ------> }
     extend: {},
   },
   plugins: [],
 }
+
+
