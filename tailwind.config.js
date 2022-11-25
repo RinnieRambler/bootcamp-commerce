@@ -8,11 +8,6 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
-    fontFamily: {
-      fancy:[]
-      boring:
-    }
-    colors: {// <!----- add custom colours here ------> }
     extend: {},
   },
   plugins: [],
