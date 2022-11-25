@@ -1,0 +1,12 @@
+<section class="grid gap-4 grid-cols-2 p-20">
+    % for item in site.ebooks %
+    <div class="p-8">
+      <img class="max-h-[50vh]" src="{{item.featured-image}}" alt="This is some SEO jazz">
+    </div>
+    <div>
+      <h2>{{item.title}}</h2>
+      <p> {{item.description}} </p>
+      <p>{{item:price}}</p>
+      <a href="">Add to cart</a>
+    </div>
+</section>
