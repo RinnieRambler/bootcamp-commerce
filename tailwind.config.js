@@ -8,7 +8,11 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
-    extend: {},
+   
+    extend: {
+      backgroundPosition: {
+       '3/4-top':'25% top',
+    }},
   },
   plugins: [],
 }
