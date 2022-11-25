@@ -83,7 +83,7 @@ grid-images:
     <div class="p-[5%] text-center bg-orange-100">
         <p class="p-10">{{item.product}}</p>
         <p class="p-10">{{item.testimonial}}</p>
-        <p>{{item.name}}{{item.title}}</p>
+        <p>{{item.name}} {{item.title}}</p>
         <img class="object-center object-cover h-[20vh]" src="{{item.image}}">
     </div>
     {% endfor %}
@@ -104,10 +104,15 @@ grid-images:
 {% endfor %}
 
 <!---Introduction Section-->
-<section>
-    <h2>This is a heading</h2>
-    <h3>This is a subtitle</h3>
-    <p> This is text</p>
+
+<section class="grid grid-cols-2">
+    <div>
+      <img src="https://picsum.photos/id/1067/600/400" alt="This is some SEO jazz">
+    </div>
+    <div>
+      <h2>This is the intro / sales pitch heading</h2>
+      <p> This is the blurb talking about category of product </p>
+    </div>
 </section>
 
 <!---Images Section (F) -->
