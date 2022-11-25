@@ -1,6 +1,27 @@
 ---
 layout: default
-___
+sneak-peek:
+    - peek-image_url: https://picsum.photos/id/684/600/400
+      peek-image-description: we need to descrbe the image for seo
+      heading: Inside Product One
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - peek-image_url: https://picsum.photos/id/231/600/400
+      peek-image-description: we need to descrbe the image for seo
+      heading: Inside Product Two
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    
+    - peek-image_url: https://picsum.photos/id/235/600/400
+      peek-image-description: we need to descrbe the image for seo
+      heading: Inside Product Three
+      text: Here is a cheeky little preview of this really fricking amazing product Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - peek-image_url: https://picsum.photos/id/377/600/400
+      peek-image-description: we need to descrbe the image for seo
+      heading: Inside Product Four
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - peek-image_url: https://picsum.photos/id/393/600/400
+      peek-image-description: we need to descrbe the image for seo
+      heading: Inside Product Five
+      text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+---
 
 <!---Ebooks Page -->
 
@@ -8,9 +29,9 @@ ___
 
 <!-----Intro / sales pitch section ----->
 
-<section class="grid gap-4 grid-cols-2">
-    <div>
-      <img src="https://picsum.photos/id/1067/600/400" alt="This is some SEO jazz">
+<section class="grid gap-4 grid-cols-2 p-20">
+    <div class="p-8">
+      <img class="max-h-[50vh]" src="https://source.unsplash.com/xuLvT0c0v6c" alt="This is some SEO jazz">
     </div>
     <div>
       <h2>This is the intro / sales pitch heading</h2>
@@ -21,7 +42,7 @@ ___
 <!---- Featured eBooks pulling in 3 randomly -->
 
 {% assign featuredProducts = site.ebooks | where_exp: "item", "item.featured == true" %}
-<section class="p-10 mb-20 tracking-wide ">
+<section class="p-20 mb-20 tracking-wide ">
     <div class="p-5"> 
       <h3 class="pb-5 text-2xl text-center">Featured Products</h3>
     </div>
@@ -37,23 +58,25 @@ ___
   </section>
 
   <!----- sneak-peek to be turned into carousel later------>
-
-  {% for section in page.sneak-peek %}
+<h3 class="p-8"> SNEAK PEAK info below will be on carousel</h3>
+  {% for item in page.sneak-peek %}
 <section class="grid grid-cols-2">
+  <section class="grid gap-8 grid-cols-2">
     <div>
-        <img src="{{section.peek-image_url}}" alt="we need to descrbe the image for seo">
+        <img class="max-w-[70%]" src="{{item.peek-image_url}}" alt="we need to descrbe the image for seo">
     </div>
     <div>
-        <h2>{{section.heading}}</h2>
-        <p>{{section.text}}</p>
+        <h2>{{item.heading}}</h2>
+        <p>{{item.text}}</p>
     </div>
+  </section>
 </section>
 {% endfor %}
 
 <!------Reviews section ----->
 <!------ need to make a loop and data set-->
 
-<section>
+<section class="p-20">
     <h3>We're so happy</h3>
     <h3> we've helped you on your travel journey!</h3>
     <div>
@@ -67,7 +90,7 @@ ___
 <!-------FAQs Section ----->
 
 <!---FAQ Section (F)-->
-<section>
+<section class="p-20">
     {% for item in site.data.faqs %}
     <div>
         <span>{{item.question}}</span>
@@ -76,6 +99,5 @@ ___
     {% endfor %}
 </section>
 
-{{content}}
 
 <!-----Footer comes from default layout------>

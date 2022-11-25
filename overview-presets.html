@@ -1,6 +1,6 @@
 ---
 layout: default
-___
+---
 
 <!---Presets Page -->
 
@@ -10,7 +10,7 @@ ___
 
 <section class="grid gap-4 grid-cols-2">
     <div>
-      <img src="https://picsum.photos/id/1067/600/400" alt="This is some SEO jazz">
+      <img class="max-h-[50vh]" src="https://source.unsplash.com/Da0pdCekeUs" alt="This is some SEO jazz">
     </div>
     <div>
       <h2>This is the intro / sales pitch heading</h2>
@@ -19,7 +19,23 @@ ___
 </section>
 
 <!---- Popular Preset Section -->
-<!--------- How can I pull in the presets that have had the most sales from the month? ------>
+<!--------- How can I pull in the presets that have had the most sales from the month? for now just used featured product loop with random pull ins ------>
+{% assign featuredProducts = site.presets | where_exp: "item", "item.featured == true" %}
+<section class="p-20 mb-20 tracking-wide ">
+    <div class="p-5"> 
+      <h3 class="pb-5 text-2xl text-center">Featured Presets</h3>
+    </div>
+    <div class="leading-8 grid gap-8 md:grid-cols-3">
+      {% for item in site.presets limit:3 %}
+      <a class="border" href="{{presets.featured-image_url}}">
+        <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{presets.featured-image}})"> </div>
+          <h3 class="text-xl font-semibold pl-2"> {{item.title}} </h3>
+          <p> {{item.price}}</p>
+          <a href="#">Learn More</a>
+          <a href="#">Add to Cart</a>
+        {% endfor %}  
+      </div>
+  </section>
 
 
 <!--------Slider before / after -------->
@@ -41,6 +57,7 @@ ___
             <p>{{item.name}}</p>
             <p>{{item.social-handle}}</p>
         </div>
+        {% endfor %}
         <p>"</p>
     </div>
     <a href="#"> i want in! </a>
