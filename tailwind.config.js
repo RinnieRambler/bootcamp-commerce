@@ -8,6 +8,10 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
+    // Le Monde 400 - subtitles 
+    fontFamily: {
+      'lemonde': [lemonde-courrier, serif;],
+    }
    
     extend: {
       backgroundPosition: {

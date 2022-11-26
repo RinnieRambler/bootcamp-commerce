@@ -42,8 +42,8 @@ grid-images:
 
 <!---Banner Section (want bg image, text and overlay to be changeable)-->
 
-<section class="bg-no-repeat bg-cover bg-[center_bottom]" style="background-image: url('https://source.unsplash.com/A5rCN8626Ck')">
-    <h3> This is text </h3>
+<section class="min-h-[50vh] min-w-full bg-no-repeat bg-cover flex items-center justify-center bg-white opacity-50" style="background-image: url('https://source.unsplash.com/A5rCN8626Ck')">
+    <h3 class="text-orange-900 text-7xl"> This is text </h3>
 </section>
 
 <!---Gallery Section (F)-->
@@ -61,7 +61,7 @@ grid-images:
 <!-- I need to come back to this and tell it where to find info-->
 
 {% assign featuredProducts = site.ebooks | where_exp: "item", "item.featured == true" %}
-<section class="p-10 mb-20 tracking-wide ">
+<section class="p-10 mb-20 tracking-wide text-orange-900 ">
     <div class="p-5"> 
       <h3 class="pb-5 text-2xl text-center">Featured Products</h3>
     </div>
