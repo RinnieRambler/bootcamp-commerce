@@ -48,15 +48,17 @@ sneak-peek:
     <div class="p-5"> 
       <h2 class="pb-5 text-2xl text-center">Featured Products</h2>
     </div>
-    <div class="grid gap-8 md:grid-cols-3 justify-center items-center">
+    <div class="grid gap-8 md:grid-cols-3 justify-center items-center pb-4">
       {% for items in site.ebooks limit:3 %}
       <div class="col-span-1 bg-white">
         <div class="p-8"> 
           <img class="object-center object-cover w-full h-[55vh]" src="{{items.featured-image}}">
-        </div>
-        <h2 class="text-xl font-semibold pl-2 bg-white"> {{items.title}} </h2>
-        <p class="pl-2 bg-white ">{{items.subtitle}}</p>
-        <a class="p-4 border border-coffee-light" href="{{items.url}}">Find Out More</a>
+        </div class="text-center">
+        <h2 class="text-center text-xl font-semibold pl-2 bg-white"> {{items.title}} </h2>
+        <p class="text-center pl-2 bg-white ">{{items.subtitle}}</p>
+        <p class="text-center bg-coffee text-cream">
+          <a class="p-2 border border-coffee-ligh" href="{{items.url}}">Find Out More</a>
+        </p>
       </div>
       {% endfor %}  
     </div>
