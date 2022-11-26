@@ -31,7 +31,7 @@ sneak-peek:
 
 <section class="grid grid-cols-2">
       <div class="pt-15 bg-sand-mid">
-      <img class="p-8 min-h-35" src="https://source.unsplash.com/xuLvT0c0v6c" alt="This is some SEO jazz"> </img>
+      <img class="p-8 min-h-20" src="https://source.unsplash.com/xuLvT0c0v6c" alt="This is some SEO jazz"> </img>
     </div>
     <div class="bg-sand-mid flex items-center">
       <div>
@@ -52,7 +52,7 @@ sneak-peek:
       {% for ebooks in site.ebooks limit:3 %}
       <a class="border" href="{{ebooks.url}}">
         <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{ebooks.featured-image}})"> </div>
-        <h3 class="text-xl font-semibold pl-2"> {{ebooks.title}} </h3>
+        <h2 class="text-xl font-semibold pl-2"> {{ebooks.title}} </h2>
         <p class="pl-2">Find Out More</p>
       </a>
       {% endfor %}  

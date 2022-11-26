@@ -9,6 +9,8 @@ module.exports = {
     // Le Monde 400 - subtitles 
     fontFamily: {
       'lemonde': ['lemonde-courrier', 'serif'],
+      'anchorage': ['AnchorageRegular', 'sans-serif'],
+      
     },
     extend: {
         backgroundPosition: {
@@ -19,8 +21,9 @@ module.exports = {
         '10': '10%',
       },
       aspectRatio: {
+        'portrait-small':'2/3',
         'portrait': '3/4',
-        'portrait tall': '3/5',
+        'portrait-tall': '3/5',
         'landscape':'4/3',
       },
       minHeight: {
