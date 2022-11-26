@@ -91,17 +91,23 @@ grid-images:
 
 <!---Sneak Peek Section-->
 
-{% for section in page.sneak-peek limit:1 %}
-<section class="grid grid-cols-2">
-    <div>
-        <img src="{{section.peek-image_url}}" alt="we need to descrbe the image for seo">
+
+<section class="slider-container">
+  {% for item in page.sneak-peek %}
+    <div class="slider-item">
+      <div class="grid grid-cols-2">
+        <div>
+          <img src="{{item.peek-image_url}}" alt="we need to descrbe the image for seo">
+        </div>
+        <div>
+          <h2>{{item.heading}}</h2>
+          <p>{{item.text}}</p>
+        </div>
+      </div>
     </div>
-    <div>
-        <h2>{{section.heading}}</h2>
-        <p>{{section.text}}</p>
-    </div>
+    {% endfor %}
 </section>
-{% endfor %}
+
 
 <!---Introduction Section-->
 
@@ -126,12 +132,14 @@ grid-images:
 
 <!---FAQ Section (F)-->
 <section>
+  <div class="  ">
     {% for item in site.data.faqs %}
-    <div>
+    <div class="slider-item">
         <span>{{item.question}}</span>
         <span>{{item.answer}}</span>
     </div>
     {% endfor %}
+  </div>
 </section>
 
 
