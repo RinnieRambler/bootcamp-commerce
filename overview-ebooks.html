@@ -44,16 +44,16 @@ sneak-peek:
 <!---- Featured eBooks pulling in 3 randomly -->
 
 {% assign featuredProducts = site.ebooks | where_exp: "item", "item.featured == true" %}
-<section class="p-20 mb-20 tracking-wide ">
+<section class="p-20 mb-20 tracking-wide bg-cream">
     <div class="p-5"> 
       <h2 class="pb-5 text-2xl text-center">Featured Products</h2>
     </div>
-    <div class="leading-8 grid gap-8 md:grid-cols-3">
+    <div class="leading-8 grid gap-8 md:grid-cols-3 bg-white">
       {% for ebooks in site.ebooks limit:3 %}
-      <a class="border" href="{{ebooks.url}}">
-        <div class="bg-image bg-center h-72 bg-no-repeat" style="background-image:url({{ebooks.featured-image}})"> </div>
-        <h2 class="text-xl font-semibold pl-2"> {{ebooks.title}} </h2>
-        <p class="pl-2">Find Out More</p>
+      <a class="border border-coffee-light" href="{{ebooks.url}}">
+        <div class="bg-image bg-center bg-no-repeat" style="background-image:url({{ebooks.featured-image}})"> </div>
+        <h2 class="text-xl font-semibold pl-2 bg-white"> {{ebooks.title}} </h2>
+        <p class="pl-2 bg-white ">Find Out More</p>
       </a>
       {% endfor %}  
     </div>
@@ -61,7 +61,7 @@ sneak-peek:
 
   <!----- sneak-peek to be turned into carousel later------>
 <h3 class="p-8"> SNEAK PEAK info below will be on carousel</h3>
-  {% for item in page.sneak-peek %}
+  {% for item in page.sneak-peek limit:1 %}
 <section class="grid grid-cols-2">
   <section class="grid gap-8 grid-cols-2">
     <div>
@@ -79,8 +79,8 @@ sneak-peek:
 <!------ need to make a loop and data set-->
 
 <section class="p-20">
-    <h3>We're so happy</h3>
-    <h3> we've helped you on your travel journey!</h3>
+    <h3 class="text-8xl text-center p-6">We're so happy</h3>
+    <h2 class="text-center p-8"> we've helped you on your travel journey!</h2>
     <div>
         <p>"</p>
         <p>blurb about how amazing this product is and why you shoud buy it</p>
