@@ -1,0 +1,11 @@
+/* Webfont: Amsterdam-One */@font-face {
+    font-family: 'AmsterdamOne';
+    src: url('Amsterdam One.eot'); /* IE9 Compat Modes */
+    src: url('Amsterdam One.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Amsterdam One.woff') format('woff'), /* Modern Browsers */
+         url('Amsterdam One.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

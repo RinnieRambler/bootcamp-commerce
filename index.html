@@ -49,7 +49,7 @@ grid-images:
 <!---Gallery Section (F)-->
 <!-- I need to come back to this and tell it where to find info-->
 
-<section class="grid md:grid-cols-5 limit:5">
+<section class="grid md:grid-cols-5 limit:5 bg-sand-mid ">
     {% for item in site.ebooks %}
     <div>
         <img class="p-5" src="{{item.featured-image}}">
@@ -61,7 +61,7 @@ grid-images:
 <!-- I need to come back to this and tell it where to find info-->
 
 {% assign featuredProducts = site.ebooks | where_exp: "item", "item.featured == true" %}
-<section class="p-10 mb-20 tracking-wide text-orange-900 ">
+<section class="p-10 mb-20 tracking-wide text-orange-900">
     <div class="p-5"> 
       <h3 class="pb-5 text-2xl text-center">Featured Products</h3>
     </div>
@@ -79,7 +79,7 @@ grid-images:
 <!---Testimonial Section (F)-->
 
 <section class="grid gap-2 md:grid-cols-4">
-    {% for item in site.data.testimonials %}
+    {% for item in site.data.testimonials limit:3 %}
     <div class="p-[5%] text-center bg-orange-100">
         <p class="p-10">{{item.product}}</p>
         <p class="p-10">{{item.testimonial}}</p>
@@ -91,7 +91,7 @@ grid-images:
 
 <!---Sneak Peek Section-->
 
-{% for section in page.sneak-peek %}
+{% for section in page.sneak-peek limit:1 %}
 <section class="grid grid-cols-2">
     <div>
         <img src="{{section.peek-image_url}}" alt="we need to descrbe the image for seo">

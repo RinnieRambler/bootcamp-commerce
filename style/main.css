@@ -2,16 +2,58 @@
 @tailwind components;
 @tailwind utilities;
  
+
+/* Webfont: Amsterdam-One */@font-face {
+    font-family: 'AmsterdamOne';
+    src: url('/style/fonts/AmsterdamOne.eot'); /* IE9 Compat Modes */
+    src: url('/style/fonts/AmsterdamOne.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/style/fonts/AmsterdamOne.woff') format('woff'), /* Modern Browsers */
+         url('/style/fonts/AmsterdamOne.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+    @font-face {
+        font-family: 'AnchorageRegular';
+        src: url('/style/fonts/AnchorageRegular.eot?#iefix') format('embedded-opentype'),  url('/style/fonts/AnchorageRegular.otf')  format('opentype'),
+               url('/style/fonts/AnchorageRegular.woff') format('woff'), url('/style/fonts/AnchorageRegular.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+    @font-face {
+        font-family: 'TokyoDreams-Regular';
+        src: url('/style/fonts/TokyoDreams-Regular.woff') format('woff'), url('/style/fonts/TokyoDreams-Regular.otf')  format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+
 .button {
     @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
 }
 
 body,
 * {
-    border: 2px solid;
+    font-family: 'lemonde'; 
+    
 }
 section,
 header,
 footer {
-    padding: 5%
+    padding: 5%;
+}
+
+h2 {
+    font-family: 'AnchorageRegular';
+}
+
+h3 {
+    font-family: 'AmsterdamOne';
+}
+p {
+    font-family: 'lemonde';
 }

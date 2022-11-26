@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'AnchorageRegular';
+  src: url('AnchorageRegular.eot?#iefix') format('embedded-opentype'),  url('AnchorageRegular.otf')  format('opentype'),
+	     url('AnchorageRegular.woff') format('woff'), url('AnchorageRegular.ttf')  format('truetype'), url('AnchorageRegular.svg#AnchorageRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
