@@ -48,19 +48,22 @@ sneak-peek:
     <div class="p-5"> 
       <h2 class="pb-5 text-2xl text-center">Featured Products</h2>
     </div>
-    <div class="leading-8 grid gap-8 md:grid-cols-3 bg-white">
-      {% for ebooks in site.ebooks limit:3 %}
-      <a class="border border-coffee-light" href="{{ebooks.url}}">
-        <div class="bg-image bg-center bg-no-repeat" style="background-image:url({{ebooks.featured-image}})"> </div>
-        <h2 class="text-xl font-semibold pl-2 bg-white"> {{ebooks.title}} </h2>
-        <p class="pl-2 bg-white ">Find Out More</p>
-      </a>
+    <div class="grid gap-8 md:grid-cols-3 justify-center items-center">
+      {% for items in site.ebooks limit:3 %}
+      <div class="col-span-1 bg-white">
+        <div class="p-8"> 
+          <img class="object-center object-cover w-full h-[55vh]" src="{{items.featured-image}}">
+        </div>
+        <h2 class="text-xl font-semibold pl-2 bg-white"> {{items.title}} </h2>
+        <p class="pl-2 bg-white ">{{items.subtitle}}</p>
+        <a class="p-4 border border-coffee-light" href="{{items.url}}">Find Out More</a>
+      </div>
       {% endfor %}  
     </div>
   </section>
 
   <!----- sneak-peek to be turned into carousel later------>
-<h3 class="p-8"> SNEAK PEAK info below will be on carousel</h3>
+<h3 class="p-8"> SNEAK PEAK </h3>
   {% for item in page.sneak-peek limit:1 %}
 <section class="grid grid-cols-2">
   <section class="grid gap-8 grid-cols-2">

@@ -9,6 +9,7 @@ module.exports = {
     fontFamily: {
       'lemonde': ['lemonde-courrier', 'serif'],
       'anchorage': ['AnchorageRegular', 'sans-serif'],
+      'tokyo-dreams':['TokyoDreams-Regular', 'sans'],
 
     },
     extend: {
