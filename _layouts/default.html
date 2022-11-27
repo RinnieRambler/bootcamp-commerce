@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<header class="bg-cream-light text-amber-900">
+<!-- <header class="bg-cream-light text-amber-900">
     <div class="text-8xl">
         <h2 class="p-10 text-10xl font-tokyo-dreams">
             <a class="hover:opacity-50 flex items-center justify-center" href="/index.html">arlo</a>
@@ -35,7 +35,47 @@
         <a class="neg-p-20 md:px-4 pt-2 mr-2 md:absolute right-0 hover:opacity-50" href="/search-doc.html"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a class="px-4 pt-2 mr-2 hover:border-b-1 hover:opacity-50 hover:border-[#101016]" href="https://cloudvent1.memberspace.com/member/plans/fcc4f3eafp"> SIGNUP</a>
     </nav>
+</header> -->
+
+<header class="bg-coffee">
+    <div class="text-8xl">
+        <h2 class="p-10 text-[10rem] font-tokyo-dreams text-orange-900">
+            <a class="hover:opacity-50 flex items-center justify-center" href="/index.html">arlo</a>
+        </h2>
+        <p class="bg-orange-900"></p>
+    </div>
+    
+    <nav class="z-40 fixed top-0 overflow-x-scroll flex items-center justify-center p-16 rounded-full whitespace-nowrap font-anchorage leading-loose bg-cream-light flex-col mx-auto burgerMenu transition-all collapsed-menu w-[20rem] pb-6">
+        <span class="menuAdjuster p-10"> close</span>
+
+        <a class="px-6 hover:white" href="/index.html"> HOME</a>
+        <a class="px-6 hover:white" href="#"> ABOUT US</a>
+        <a class="px-6 hover:white" href="/overview-ebooks.html">EBOOKS</a>
+        <a class="px-6  hover:white" href="/overview-presets.html">PRESETS</a>
+        <a class="px-6 hover:white" href="#"> REVIEWS</a>
+        <a class="ppx-6 hover:white" href="/products-page.html"> SHOP</a>
+        <a class="px-6 hover:white" href="#"> FAQS</a>
+        <a class="px-6 hover:white" href="https://cloudvent1.memberspace.com/member/plans/fcc4f3eafp"> SIGNUP</a>
+
+        <span class="menuAdjuster p-10 hover:white"> menu</span>
+    </nav>
+
+    <a class="px-6 hover:opacity-50 text-black text-lg z-50" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 </header>
+<script>
+    const burgerMenu = document.querySelector(".burgerMenu")
+    const menuAdjuster = document.querySelectorAll(".menuAdjuster")
+console.log(burgerMenu)
+console.log(menuAdjuster)
+
+menuAdjuster.forEach(button => {
+    button.addEventListener("click", () => {
+        burgerMenu.classList.toggle("collapsed-menu")
+    });
+
+})
+</script>
+
 
     {{content}}
     

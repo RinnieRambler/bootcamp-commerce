@@ -89,21 +89,24 @@ sneak-peek:
 <!------Reviews section ----->
 <!------ need to make a loop and data set-->
 
-<section class="p-20">
-    <h3 class="text-10xl text-center p-6">We're so happy...</h3>
+<section class="p-20 mt-10">
+    <h3 class="text-6xl text-center p-6 pb-8">We're so happy...</h3>
     <h2 class="text-center p-8 text-base"> we've helped you on your travel journey!</h2>
     
     <div class="slider-container">
-      <div class="grid grid-cols-3">
-        <p>"</p>
-        {% for item in site.data.reviews-ebooks %}
+        {% for item in site.data.reviews-ebooks limit:3 %}
           <div class="slider-item">
-            <p>{{item.review}}</p>
-            <p>{{item.name-and-social}}</p>
+            <div class="grid grid-cols-3 p-6 text-lg">
+              <p class="text-right">&#8220;</p>
+              <div class="text-center">
+                <p>{{item.review}}</p>
+                <p>{{item.name-and-social}}</p>
+              </div>
+              <p>&#8221;</p>
+            </div>
           </div>
         {% endfor %}
-        <p>"</p>
-      </div>
+      
     </div>
    
 </section>

@@ -80,3 +80,7 @@ p {
     overflow: hidden;
     padding:0;
 }
+
+.collapsed-menu {
+    top: -24rem;
+}
