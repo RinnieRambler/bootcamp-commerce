@@ -46,7 +46,20 @@ grid-images:
     <h3 class="text-orange-900 text-7xl"> This is text </h3>
 </section>
 
-<!---Gallery Section (F)-->
+<!--- eBooks Products Section (F)-->
+
+<section class="grid gap-2 grid-cols-5">
+    {% for item in site.ebooks limit:5 %}
+    <div class="{% if forloop.index == 2 %}col-span-3 row-span-2{% endif %}">
+        <h2> {{item.title}}</h2>
+        <img src="{{item.featured-image}}">
+        <p>{{item.description}}</p>
+        <a href="{{item.url}}">Click Me</a>
+    </div>
+    {% endfor %}
+</section>
+
+<!---Presets Gallery Section (F)-->
 <!-- I need to come back to this and tell it where to find info-->
 
 <section class="grid md:grid-cols-5 limit:5 bg-sand-mid ">
