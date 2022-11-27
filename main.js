@@ -46,3 +46,13 @@ $('.slider-container').slick({
         // Step #4. Add an event listener to each of them that triggers our function
         button.addEventListener('click', dropDownAnswer)
     })
+
+    // Before After Slider
+
+$("#ba-slider").on("input change", (e)=>{
+  const sliderPos = e.target.value;
+  // Update the width of the foreground image
+  $('.ba-foreground-img').css('width', `${sliderPos}%`)
+  // Update the position of the slider button
+  $('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+});
