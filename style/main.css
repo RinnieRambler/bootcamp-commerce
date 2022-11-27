@@ -55,3 +55,28 @@ h3 {
 p {
     font-family: 'lemonde';
 }
+
+.hidden {
+    display: none;
+}
+
+.expandButton::after {
+    content: '\02795';
+}
+
+.active::after {
+    content: '\2212';
+}
+
+.expandable {
+    overflow: hidden;
+    max-height: 5rem;
+    transition: .8s;
+}
+
+.collapse {
+    max-height: 0;
+    transition: .5s;
+    overflow: hidden;
+    padding:0;
+}

@@ -1,23 +1,23 @@
 ---
 layout: default
 sneak-peek:
-    - peek-image_url: https://picsum.photos/id/684/600/400
+    - peek-image_url: /assets/ebook-sneak-peek.jpg
       peek-image-description: we need to descrbe the image for seo
       heading: Inside Product One
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    - peek-image_url: https://picsum.photos/id/231/600/400
+    - peek-image_url: /assets/ebook-sneak-peek.jpg
       peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Two
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    
-    - peek-image_url: https://picsum.photos/id/235/600/400
+    - peek-image_url: /assets/ebook-sneak-peek.jpg
       peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Three
       text: Here is a cheeky little preview of this really fricking amazing product Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    - peek-image_url: https://picsum.photos/id/377/600/400
+    - peek-image_url: /assets/ebook-sneak-peek.jpg
       peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Four
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    - peek-image_url: https://picsum.photos/id/393/600/400
+    - peek-image_url: /assets/ebook-sneak-peek.jpg
       peek-image-description: we need to descrbe the image for seo
       heading: Inside Product Five
       text: Here is a cheeky little preview of this really fricking amazing product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -35,8 +35,8 @@ sneak-peek:
     </div>
     <div class="bg-sand-mid flex items-center">
       <div>
-      <h2 class="">test This is the intro / sales pitch heading</h2>
-      <p class=""> This is the blurb talking about category of product </p>
+      <h2 class="p-6">test This is the intro / sales pitch heading</h2>
+      <p class="p-6 leading-6"> This is the blurb talking about category of product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
       </div>
     </div>
 </section>
@@ -56,8 +56,8 @@ sneak-peek:
         </div class="text-center">
         <h2 class="text-center text-xl font-semibold pl-2 bg-white"> {{items.title}} </h2>
         <p class="text-center pl-2 bg-white ">{{items.subtitle}}</p>
-        <p class="text-center bg-coffee text-cream">
-          <a class="p-2 border border-coffee-ligh" href="{{items.url}}">Find Out More</a>
+        <p class="text-center text-cream">
+          <a class="p-2 border border-coffee-light bg-coffee" href="{{items.url}}">Find Out More</a>
         </p>
       </div>
       {% endfor %}  
@@ -65,20 +65,26 @@ sneak-peek:
   </section>
 
   <!----- sneak-peek to be turned into carousel later------>
+
+<section class="bg-coffee
+">
 <h3 class="p-8"> SNEAK PEAK </h3>
-  {% for item in page.sneak-peek limit:1 %}
-<section class="grid grid-cols-2">
-  <section class="grid gap-8 grid-cols-2">
-    <div>
-        <img class="max-w-[70%]" src="{{item.peek-image_url}}" alt="we need to descrbe the image for seo">
+<div class="slider-container">
+  {% for item in page.sneak-peek %}
+    <div class="slider-item">
+      <div class="grid grid-cols-2 ">
+        <div>
+          <img class="w-[55wv] h-[55vh] justify-center items-center" src="{{item.peek-image_url}}" alt="we need to descrbe the image for seo">
+        </div>
+        <div>
+          <h2>{{item.heading}}</h2>
+          <p>{{item.text}}</p>
+        </div>
+      </div>
     </div>
-    <div>
-        <h2>{{item.heading}}</h2>
-        <p>{{item.text}}</p>
-    </div>
-  </section>
+    {% endfor %}
+  </div>
 </section>
-{% endfor %}
 
 <!------Reviews section ----->
 <!------ need to make a loop and data set-->
@@ -86,25 +92,33 @@ sneak-peek:
 <section class="p-20">
     <h3 class="text-8xl text-center p-6">We're so happy</h3>
     <h2 class="text-center p-8"> we've helped you on your travel journey!</h2>
+    
     <div>
         <p>"</p>
-        <p>blurb about how amazing this product is and why you shoud buy it</p>
-        <p>@thisismyinstagram</p>
+        {% for item in site.data.reviews-ebooks %}
+        <div>
+          <p>{{item.review}}</p>
+          <p>{{item.name-and-social}}</p>
+        </div>
+        {% endfor %}
         <p>"</p>
     </div>
+   
 </section>
 
 <!-------FAQs Section ----->
 
 <!---FAQ Section (F)-->
-<section class="p-20">
+<section class="p-20 border-1 border-coffee-mid">
     {% for item in site.data.faqs %}
     <div>
-        <span>{{item.question}}</span>
-        <span>{{item.answer}}</span>
+      <button class="expandButton flex justify-between w-full bg-sand-mid border-coffee-mid border-1 p-8" data-target-button="{{forloop.index}}"><h2 class="text-left text-cream-light">Q. {{item.question}}</h2></button>
+      <div class="p-8 expandable collapse bg-sand-light text-cream-light" data-target-more="{{forloop.index}}"><p class="text-cream-light">A. {{item.answer}}</p>
+      </div>
     </div>
     {% endfor %}
 </section>
 
 
 <!-----Footer comes from default layout------>
+

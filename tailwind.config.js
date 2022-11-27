@@ -35,7 +35,8 @@ module.exports = {
         '90': '90vh',
         '100': '100vh',
       },
-      colors: {     
+      colors: {  
+        'cream-light':'fffcf8',   
         'cream': '#fff4e0',
         'sand-light': '#fae4cc',
         'sand-mid': '#ebd4b4',
