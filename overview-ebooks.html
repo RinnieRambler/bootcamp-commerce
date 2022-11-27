@@ -90,18 +90,20 @@ sneak-peek:
 <!------ need to make a loop and data set-->
 
 <section class="p-20">
-    <h3 class="text-8xl text-center p-6">We're so happy</h3>
-    <h2 class="text-center p-8"> we've helped you on your travel journey!</h2>
+    <h3 class="text-10xl text-center p-6">We're so happy...</h3>
+    <h2 class="text-center p-8 text-base"> we've helped you on your travel journey!</h2>
     
-    <div>
+    <div class="slider-container">
+      <div class="grid grid-cols-3">
         <p>"</p>
         {% for item in site.data.reviews-ebooks %}
-        <div>
-          <p>{{item.review}}</p>
-          <p>{{item.name-and-social}}</p>
-        </div>
+          <div class="slider-item">
+            <p>{{item.review}}</p>
+            <p>{{item.name-and-social}}</p>
+          </div>
         {% endfor %}
         <p>"</p>
+      </div>
     </div>
    
 </section>
@@ -113,7 +115,7 @@ sneak-peek:
     {% for item in site.data.faqs %}
     <div>
       <button class="expandButton flex justify-between w-full bg-sand-mid border-coffee-mid border-1 p-8" data-target-button="{{forloop.index}}"><h2 class="text-left text-cream-light">Q. {{item.question}}</h2></button>
-      <div class="p-8 expandable collapse bg-sand-light text-cream-light" data-target-more="{{forloop.index}}"><p class="text-cream-light">A. {{item.answer}}</p>
+      <div class="p-8 expandable collapse bg-cream text-coffee-mid" data-target-more="{{forloop.index}}"><p class="text-cream-light">A. {{item.answer}}</p>
       </div>
     </div>
     {% endfor %}
