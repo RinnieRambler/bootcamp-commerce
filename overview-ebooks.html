@@ -31,12 +31,13 @@ sneak-peek:
 
 <section class="grid grid-cols-2">
       <div class="pt-15 bg-sand-mid">
-      <img class="p-8 min-h-20" src="https://source.unsplash.com/xuLvT0c0v6c" alt="This is some SEO jazz"> </img>
+      <img class="p-8 min-h-20" src="/assets/rucksack-magazine.jpg" alt="This is some SEO jazz"> </img>
     </div>
-    <div class="bg-sand-mid flex items-center">
-      <div>
+    <div class="bg-sand-mid">
+      <div class="sticky top-0">
       <h2 class="p-6">test This is the intro / sales pitch heading</h2>
       <p class="p-6 leading-6"> This is the blurb talking about category of product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      <p class="p-6 leading-6">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
       </div>
     </div>
 </section>
@@ -44,41 +45,40 @@ sneak-peek:
 <!---- Featured eBooks pulling in 3 randomly -->
 
 {% assign featuredProducts = site.ebooks | where_exp: "item", "item.featured == true" %}
-<section class="p-20 mb-20 tracking-wide bg-cream">
+<section class="p-20 m-20 tracking-wide bg-cream">
     <div class="p-5"> 
       <h2 class="pb-5 text-2xl text-center">Featured Products</h2>
     </div>
-    <div class="grid gap-8 md:grid-cols-3 justify-center items-center pb-4">
+    <div class="grid gap-8 md:grid-cols-3 justify-center items-center pb-10">
       {% for items in site.ebooks limit:3 %}
-      <div class="col-span-1 bg-white">
+      <div class="col-span-1 bg-white pb-8">
         <div class="p-8"> 
           <img class="object-center object-cover w-full h-[55vh]" src="{{items.featured-image}}">
         </div class="text-center">
-        <h2 class="text-center text-xl font-semibold pl-2 bg-white"> {{items.title}} </h2>
-        <p class="text-center pl-2 bg-white ">{{items.subtitle}}</p>
+        <h2 class="text-center text-cocoa text-xl font-semibold p-4 bg-white"> {{items.title}} </h2>
+        <p class="text-center text-cocoa p-6 bg-white ">{{items.subtitle}}</p>
         <p class="text-center text-cream">
-          <a class="p-2 border border-coffee-light bg-coffee" href="{{items.url}}">Find Out More</a>
+          <a class="p-2 border border-coffee-light bg-coffee px-4" href="{{items.url}}">Find Out More</a>
         </p>
       </div>
       {% endfor %}  
     </div>
   </section>
 
-  <!----- sneak-peek to be turned into carousel later------>
+  <!---------- sneak-peek ---------->
 
-<section class="bg-coffee
-">
-<h3 class="p-8"> SNEAK PEAK </h3>
+<section class="bg-cream-light p-20 m-20 border-solid border-coffee-mid">
+<h3 class="p-20 pb-24 text-center text-coffee font-tokyo-dreams font-bold text-6xl"> sneak peak </h3>
 <div class="slider-container">
   {% for item in page.sneak-peek %}
     <div class="slider-item">
-      <div class="grid grid-cols-2 ">
-        <div>
-          <img class="w-[55wv] h-[55vh] justify-center items-center" src="{{item.peek-image_url}}" alt="we need to descrbe the image for seo">
+      <div class="grid grid-cols-2 gap-5">
+        <div class=" grid justify-items-end">
+          <img class="w-[55wv] h-[55vh] flex items-center" src="{{item.peek-image_url}}" alt="we need to descrbe the image for seo">
         </div>
-        <div>
-          <h2>{{item.heading}}</h2>
-          <p>{{item.text}}</p>
+        <div class="w-80 text-cocoa">
+          <h2 class="p-4">{{item.heading}}</h2>
+          <p class="p-4">{{item.text}}</p>
         </div>
       </div>
     </div>
@@ -89,20 +89,20 @@ sneak-peek:
 <!------Reviews section ----->
 <!------ need to make a loop and data set-->
 
-<section class="p-20 mt-10">
-    <h3 class="text-6xl text-center p-6 pb-8">We're so happy...</h3>
-    <h2 class="text-center p-8 text-base"> we've helped you on your travel journey!</h2>
+<section class="p-20 mt-10 bg-coffee-light">
+    <h3 class="text-6xl text-center text-cream p-6 pb-8">We're so happy...</h3>
+    <h2 class="text-center text-cream-light font-bold p-8 text-base "> we've helped you on your travel journey!</h2>
     
     <div class="slider-container">
         {% for item in site.data.reviews-ebooks limit:3 %}
           <div class="slider-item">
             <div class="grid grid-cols-3 p-6 text-lg">
-              <p class="text-right">&#8220;</p>
+              <p class="text-right text-6xl p-6 text-coffee">&#8220;</p>
               <div class="text-center">
-                <p>{{item.review}}</p>
-                <p>{{item.name-and-social}}</p>
+                <p class=" text-orange-900 font-bold">{{item.review}}</p>
+                <p class=" text-coffee p-4 font-semibold">{{item.name-and-social}}</p>
               </div>
-              <p>&#8221;</p>
+              <p class="text-6xl p-6 text-coffee">&#8221;</p>
             </div>
           </div>
         {% endfor %}
@@ -117,14 +117,20 @@ sneak-peek:
 <section class="p-20 border-1 border-coffee-mid">
     {% for item in site.data.faqs %}
     <div>
-      <button class="expandButton flex justify-between w-full bg-sand-mid border-coffee-mid border-1 p-8" data-target-button="{{forloop.index}}"><h2 class="text-left text-cream-light">Q. {{item.question}}</h2></button>
-      <div class="p-8 expandable collapse bg-cream text-coffee-mid" data-target-more="{{forloop.index}}"><p class="text-cream-light">A. {{item.answer}}</p>
+      <button class="expandButton flex justify-between w-full bg-sand-mid border-coffee-mid border-1 p-8" data-target-button="{{forloop.index}}"><h2 class="text-left text-coffee">Q. {{item.question}}</h2></button>
+      <div class="p-8 expandable collapse bg-cream" data-target-more="{{forloop.index}}"><p class="text-coffee">A. {{item.answer}}</p>
       </div>
     </div>
     {% endfor %}
 </section>
 
-<div id='product-component-1669539150104'></div>
+<div class="p-20 flex justify-center items-center">
+  <button class="bg-orange-900 hover:bg-cream hover:border-solid hover:border-orange-900 px-20 py-6">
+    <a class="font-tokyo-dreams text-cream-light font-bold text-4xl hover:text-orange-900" href="#"> let's shop ebooks</a>
+  </button>
+</div>
+
+<!-- <div id='product-component-1669539150104'></div> -->
 
 
 <!-----Footer comes from default layout------>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
+    
     <title>{{page.title}}</title>
 
     <!--- Adobe Fonts ---->
@@ -14,6 +14,9 @@
     <!------- Slick Slider Theme ------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
    
 </head>
 
@@ -45,7 +48,7 @@
         <p class="bg-orange-900"></p>
     </div>
     
-    <nav class="z-40 fixed top-0 overflow-x-scroll flex items-center justify-center p-16 rounded-full whitespace-nowrap font-anchorage leading-loose bg-coffee flex-col mx-auto burgerMenu transition-all collapsed-menu w-[20rem] pb-6">
+    <nav class="z-40 fixed top-0 overflow-x-scroll flex items-center justify-center p-16 rounded-full whitespace-nowrap font-anchorage leading-loose bg-coffee border-solid border-cream-light flex-col mx-auto burgerMenu transition-all collapsed-menu w-[20rem] pb-6">
         <span class="menuAdjuster p-10"> close</span>
 
         <a class="px-6 hover:white" href="/index.html"> HOME</a>
@@ -79,29 +82,32 @@ menuAdjuster.forEach(button => {
 
     {{content}}
     
-    <footer>
-        <div>
-            <div>
-                <a href="#">logo</a>
+    <footer class="bg-coffee mt-8">
+        <div class="grid grid-cols-3">
+            <div class="font-tokyo-dreams text-cream-light text-8xl flex justify-center items-center p-8">
+                <a href="#">arlo</a>
             </div>
-        <nav>
-            <h2>This is the navigation</h2>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-        </nav>
-        <nav>
-            <h2>This is the second navigation</h2>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-            <a href="#">Click me</a>
-    
-        </nav>
-        
+          <div class="p-8">
+            <nav>
+              <h2 class="text-bold text-cream-light ">This is the navigation</h2>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+            </nav>
+          </div>
+          <div class="p-8">
+            <nav>
+              <h2 class="text-bold text-cream-light">This is the second navigation</h2>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+              <a class="block" href="#">Click me</a>
+            </nav>
+          </div>
+        </div>
     </footer>
 
     <script>

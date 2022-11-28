@@ -60,6 +60,19 @@ p {
     display: none;
 }
 
+/* This is my arrows on slider */
+.slick-prev:before {
+  content: '→';
+  color: #9c795f;
+  font-family: inherit;
+}
+
+.slick-next:before {
+  content: '→';
+  color: #9c795f;
+  font-family: inherit;
+}
+
 .expandButton::after {
     content: '\02795';
 }
@@ -96,7 +109,7 @@ html {
   
   .ba-container {
     position: relative;
-    width: 60%; /* change this to suit your design */
+    width: 30%; /* change this to suit your design */
     padding-bottom: 50%;
     border: 2px solid white;
     margin:auto;
@@ -107,8 +120,9 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: 54vw; /* change this to suit your design */
+    background-size: 30vw; /* change this to suit your design */
     background-position: left;
+    background-repeat: no-repeat;
   }
   .ba-background-img {
     background-image: url('/assets/beignet-after.JPG');
